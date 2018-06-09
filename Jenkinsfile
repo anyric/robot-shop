@@ -4,11 +4,12 @@ node {
       checkout scm
     }
     stage('Build Docker test'){
-     sh 'docker-compose build'
+      sh("docker-compose build robot-shop .")
+
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master'){
-        sh("kubectl --namespace=production apply -f k8s/descriptors/")
+        sh("kubectl --namespace=robot-shop apply -f k8s/descriptors/")
       }
     }
   }
