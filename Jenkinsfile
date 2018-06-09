@@ -3,6 +3,9 @@ node {
     stage('Checkout') {
       checkout scm
     }
+    stage('Install docker') {
+      sh 'apt-get install -y docker.io'
+    }
     stage('Build Docker test'){
      sh 'docker-compose build'
     }
