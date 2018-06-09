@@ -3,12 +3,6 @@ node {
     stage('Checkout') {
       checkout scm
     }
-    stage('Install docker') {
-      sh 'sudo apt-get install apt-transport-https -y'
-      sh 'sudo apt-get install -y docker.io'
-      sh 'sudo systemctl start docker'
-      sh 'sudo systemctl enable docker'
-    }
     stage('Build Docker test'){
      sh 'docker-compose build'
     }
