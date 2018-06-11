@@ -4,8 +4,7 @@ node {
       checkout scm
     }
     stage('Build Docker robot-shop'){
-      sh 'docker-machine start default'
-      sh 'docker-compose build'
+      sh 'sudo docker-compose build'
      
     }
     stage('Deploy'){
