@@ -5,6 +5,7 @@ node {
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master') {
+        sh("kubectl get pods --all-namespaces")
         sh("kubectl apply -f ./k8s/cart-deployment.yaml")
         sh("kubectl apply -f ./k8s/cart-service.yaml")
       }
