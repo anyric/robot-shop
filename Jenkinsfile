@@ -4,7 +4,7 @@ node {
       checkout scm
     }
     stage('Build Docker robot-sho'){
-      sh("docker-compose build robot-shop .")
+      sh(" sudo /usr/local/bin/docker-compose build robot-shop .")
      
     }
     stage('Deploy'){
