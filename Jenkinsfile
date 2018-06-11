@@ -3,8 +3,8 @@ node {
     stage('Checkout') {
       checkout scm
     }
-    stage('Build Docker robot-sho'){
-      sh("docker stack deploy")
+    stage('Build Docker robot-shop'){
+      sh("docker stack deploy robot-shop")
      
     }
     stage('Deploy'){
