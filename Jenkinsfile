@@ -5,7 +5,7 @@ node {
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master') {
-        sh("kompose --file docker-compose.yaml up")
+        sh "kubectl apply -f ./K8s/descriptors/*.yaml"
       }
     }
   }
