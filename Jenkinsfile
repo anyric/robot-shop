@@ -5,7 +5,7 @@ node {
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master') {
-        sh("kubectl --namespace=robot-shop apply -f ./K8s/descriptors/*")
+        sh("kompose up -f ./docker-compose.yaml")
       }
     }
   }
