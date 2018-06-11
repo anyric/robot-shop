@@ -5,7 +5,7 @@ node {
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master') {
-        sh("kompose up -f ./docker-compose.yaml")
+        sh("kompose --file docker-compose.yaml up")
       }
     }
   }
