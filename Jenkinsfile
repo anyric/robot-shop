@@ -8,6 +8,9 @@ node {
         sh 'kubectl create -f K8s/descriptors/'
       }
     }
+    stage('Post Deploy') {
+      sh 'kubectl get pods --all-namespaces'
+    }
   }
   catch (err) {
     throw err
